@@ -1,0 +1,174 @@
+:root {
+  --main-text-color: black;
+  --additional-text-color: white;
+  --border-radius: 6px;
+  --padding-extra-small: 8px;
+  --padding-small: 12px;
+  --padding-medium: 16px;
+  --padding-big: 20px;
+  --main-text-size: 16px
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-size: var(--main-text-size);
+  line-height: 1.5;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: var(--main-text-color);
+  padding: 0;
+  margin: 0;
+}
+.main-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* height: 100vh; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  text-align: center;
+  border-radius:  var(--border-radius);
+  border: 4px solid #9747FF;
+}
+.header {
+  color: white;
+  background-color: #14AE5C;
+  border-radius:  var(--border-radius);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--padding-small);
+  z-index: 2;
+}
+.main-screen {
+  background-color: #9747FF;
+  
+  min-height: 100vh;
+  padding-top: calc(var(--padding-small) * 2 + var(--main-text-size)*1.5  + var(--padding-medium)*2);
+  padding-bottom: calc(var(--padding-big) * 2 + var(--main-text-size)*1.5  + var(--padding-medium)*2);
+  overflow-y: scroll;
+}
+
+.main-screen-text {
+  position: fixed;
+  top: calc(50% - var(--main-text-size));
+  left: calc(50% - 25px);
+  z-index: 0;
+  color: var(--additional-text-color);
+}
+.content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 var(--padding-medium);
+  gap: var(--padding-medium);
+}
+.elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FFCD29;
+  border-radius: var(--border-radius);
+  padding: var(--padding-extra-small);
+  z-index: 1;
+  min-height: 64px;
+  width: 64%;
+}
+.elements:nth-of-type(2n) {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.input  {
+  background-color: #F24822;
+  color: white;
+  border-radius: var(--border-radius);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--padding-big);
+  z-index: 2;
+}
+.sidebar {
+  display: none;
+}
+@media screen and (min-width: 769px) {
+  .sidebar {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    border: 4px solid #E3E3E3;
+    width: calc(31% + 6px);
+    border-radius: var(--border-radius);
+    overflow-y: scroll;
+  }
+  .sidebar-text {
+    position: fixed;
+    top: calc(50% - var(--main-text-size));
+    left: calc(15% - 63px);
+  }
+  .sidebar-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: var(--padding-medium);
+  }
+  .sidebar-content .elements:nth-of-type(2n) {
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+  }
+  .header, .input, .main-wrapper {
+    left: 31%;
+  }
+  .header {
+    border: 4px solid #006437
+  }
+  .input {
+    border: 4px solid #8E2E1F
+  }
+  .main-wrapper {
+    border: 4px solid #58239A
+  }
+  .elements {
+    border: 4px solid #EBAB00
+  }
+}
